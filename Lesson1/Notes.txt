@@ -1,0 +1,2 @@
+Am instalat github https://github.com
+In GitHub a aparut in comment(1)acolo a aparut textul nostru.
