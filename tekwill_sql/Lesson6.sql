@@ -113,3 +113,107 @@ From employees
 Where salary >=10000
 or job_id like'%MAN'
 or commission_pct is not null;
+
+
+
+
+
+Select last_name,
+       department_id,
+       salary
+From employees
+Where department_id=60
+or   department_id=80
+and salary>10000;
+
+
+
+select *
+from employees
+where job_id ='SA_REP'
+or job_id='SA_MAN'
+and phone_number like '%5%';
+
+
+
+
+
+select *
+from employees
+where (job_id ='SA_REP'
+or job_id='SA_MAN')
+and phone_number like '%5%';
+
+
+select *
+from employees
+where job_id ='SA_REP'
+or job_id='SA_MAN'
+and phone_number like '%5%'
+order by salary ASc;
+
+
+
+
+
+
+select last_name || first_name as "FullName"
+from employees
+order by last_name ASc;
+
+
+select last_name || first_name as "FullName",
+     salary as salariu
+from employees
+order by 1 desc,2 desc;
+
+
+
+Select *
+From employees
+order by employee_id desc
+fetch first 5 rows only;
+
+
+
+Select *
+From employees
+order by employee_id
+offset 14 rows
+fetch first 5 rows only;
+
+
+
+
+Select *
+From employees
+order by employee_id
+offset 1 rows
+fetch first 1 rows with ties;
+
+
+
+
+Select *
+From employees
+order by salary
+--offset 1 rows
+fetch first 18 rows with ties;
+
+
+
+
+
+Select *
+From employees
+order by salary
+offset 1 row
+fetch next 18 rows with ties;
+
+
+Select employee_id,
+      last_name,
+      salary,
+      department_id
+from employees
+where employee_id =&employee;
