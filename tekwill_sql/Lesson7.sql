@@ -70,7 +70,7 @@ SELECT EMPLOYEE_ID,
        LENGTH(LAST_NAME),
        INSTR(LAST_NAME,'a') "CONTAINS A"
 FROM EMPLOYEES
-WHERE SUBSTR(LAST_NAME, -1,1)= 'n';
+WHERE SUBSTR(LASTRT_NAME, -1,1)= 'n';
 
 
 select length('аспределенные системы контроля версий')
