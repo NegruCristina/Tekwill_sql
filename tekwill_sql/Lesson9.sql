@@ -35,3 +35,17 @@ ELSE MANAGER_ID
 END AS CASE1
 FROM EMPLOYEES;
 
+
+
+
+SELECT  first_name || ' ' || last_name as Full_name,
+JOB_ID,
+SALARY,
+decode(job_id,'IT_PROG', SALARY*0.10,
+JOB_ID,'AC_ACCOUNT',SALARY*0.15, 
+JOB_ID, 'SA_MAN', SALARY*0.2, SALARY) AS SALARY
+FROM EMPLOYEES;
+
+
+
+

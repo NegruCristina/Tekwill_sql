@@ -51,3 +51,83 @@ Select min(hire_date),
 max(hire_date)
 from employees
 where job_id ='SA_REP';
+
+
+
+
+Select count(*) count_all,
+count(nvl(commission_pct,0))as count1,
+count(employee_id) as count2,
+count(commission_pct)as count3
+from employees;
+
+
+
+Select department_id as deparment_id1,
+avg(salary)
+from employees
+group by department_id;
+
+
+
+Select nvl(department_id,10) as t1,
+round(avg(salary),2)
+from employees
+group by nvl(department_id,10);
+
+
+
+
+Select first_name,
+avg(salary)
+from employees
+group by first_name;
+
+
+
+
+
+
+
+Select department_id,
+job_id,
+manager_id,
+avg(salary),
+min(hire_date),
+max(salary)
+from employees
+where department_id between 50and 100
+group by department_id, job_id,manager_id
+order by department_id;
+
+
+
+Select department_id,
+job_id,
+manager_id,
+avg(salary),
+min(hire_date),
+max(salary)
+from employees
+where department_id between 50and 100
+group by department_id, job_id,manager_id
+having max(salary)>=10000
+order by department_id;
+
+
+
+Select department_id,
+job_id,
+manager_id,
+avg(salary),
+min(hire_date),
+max(salary)
+from employees
+where department_id between 50 and 100
+and salary>=10000
+group by department_id, job_id,manager_id
+order by department_id;
+
+
+
+
